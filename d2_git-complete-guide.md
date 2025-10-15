@@ -2,18 +2,21 @@
 *Based on MLOps Course - Git Lecture*
 
 ## Git Fundamentals
-| `rm .git or rm -rf .git` |🧨 2️⃣ Delete the old Git history | `" git init
+| `rm .git or rm -rf .git` |✖️ Delete the old Git history | `" git init
 git add .
 git commit -m "Initial commit - my clean version   optional : git remote add origin https://github.com/<your-username>/<new-repo-name>.git
 git branch -M main
 git push -u origin main
 "
-` |git rebase --continue
+` |folder in folder with both having .git in it leads to conflicts while pushing so 
+# Delete the inner repo's .git folder
+rm -rf <inner-folder>/.git
 
- 
-### MY C++ Code
-```t
-
+# Add and commit as part of outer repo
+git add <inner-folder>
+git commit -m "Add inner folder into main repo"
+git push 
+` |
 ### Basic Configuration
 
 
@@ -108,9 +111,12 @@ git push -u origin main
 
 | Command | Description | Example | When to Use |
 |---------|-------------|---------|-------------|
-| `git rebase <branch>` | Rebase current branch | `git rebase main` | Update feature branch |
-| `git rebase -i <commit>` | Interactive rebase | `git rebase -i HEAD~3` | Clean up commit history |
-| `git rebase --abort` | Abort rebase | `git rebase --abort` | Cancel ongoing rebase |
+| `git rebase <branch>` | Rebase current branch onto another branch | `git rebase main` | Update feature branch with latest changes from main |
+| `git rebase -i <commit>` | Interactive rebase to edit commits | `git rebase -i HEAD~3` | Clean up or combine recent commits |
+| `git rebase --abort` | Abort ongoing rebase | `git rebase --abort` | Cancel a rebase in progress if conflicts are complicated |
+| `git rebase --continue` | Continue after resolving conflicts | `git rebase --continue` | Proceed with rebase after fixing conflicts |
+| `git rebase --skip` | Skip the current commit | `git rebase --skip` | Skip a commit that cannot be applied cleanly |
+
 
 ## Undoing Changes
 
