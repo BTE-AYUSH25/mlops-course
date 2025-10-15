@@ -8,8 +8,12 @@ git commit -m "Initial commit - my clean version   optional : git remote add ori
 git branch -M main
 git push -u origin main
 "
-` |
+` |git rebase --continue
+
  
+### MY C++ Code
+```t
+
 ### Basic Configuration
 
 
@@ -249,7 +253,7 @@ git push -u origin main
 |---------|-------------|---------|
 | `git log` | Show commit history | `git log` |
 | `git log --oneline` | Compact history view | `git log --oneline` |
-| `git log --graph` | History with branch graph | `git log --graph --oneline` |
+| `git log --graph` | History with branch graph | `git log --oneline --graph --all --decorate` |
 | `git show <commit>` | Show specific commit details | `git show abc123` |
 
 ### Difference Tracking
@@ -347,3 +351,4 @@ git push -u origin main
 | `data:` | Data changes | `data: add new training dataset` |
 | `model:` | Model changes | `model: update hyperparameters` |
 
+```
