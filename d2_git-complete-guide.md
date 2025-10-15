@@ -2,8 +2,16 @@
 *Based on MLOps Course - Git Lecture*
 
 ## Git Fundamentals
-
+| `rm .git or rm -rf .git` |🧨 2️⃣ Delete the old Git history | `" git init
+git add .
+git commit -m "Initial commit - my clean version   optional : git remote add origin https://github.com/<your-username>/<new-repo-name>.git
+git branch -M main
+git push -u origin main
+"
+` |
+ 
 ### Basic Configuration
+
 
 | Command | Description | Example |
 |---------|-------------|---------|
